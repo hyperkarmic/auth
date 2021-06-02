@@ -2,10 +2,13 @@ const express = require("express");
 
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
 // connect to db
+// connect to db
 mongoose.connect(
-  "mongodb+srv://hyperkarma:mibapab23@cluster0.1umtl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.DB_CONNECT,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
